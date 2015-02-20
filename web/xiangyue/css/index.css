@@ -1,0 +1,12 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/index\.less}line{font-family:\000031}}
+body {
+  background-image: url(../image/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/index\.less}line{font-family:\000036}}
+.wrap {
+  width: 100%;
+  height: 100%;
+  background-image: url(../image/bg.jpg);
+}

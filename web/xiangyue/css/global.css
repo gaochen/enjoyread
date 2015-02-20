@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/global\.less}line{font-family:\000034}}
+body,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+table,
+td,
+img,
+div,
+dl,
+dt,
+dd,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/global\.less}line{font-family:\000036}}
+img {
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/global\.less}line{font-family:\000037}}
+ul,
+ol {
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/global\.less}line{font-family:\000038}}
+input,
+select,
+textarea {
+  outline: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/global\.less}line{font-family:\000039}}
+textarea {
+  resize: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/global\.less}line{font-family:\0000310}}
+a {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/global\.less}line{font-family:\0000311}}
+li {
+  display: inline;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/global\.less}line{font-family:\0000313}}
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  color: #333;
+  font-family: '微软雅黑';
+  letter-spacing: 1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/web\/xiangyue\/css\/global\.less}line{font-family:\0000321}}
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
