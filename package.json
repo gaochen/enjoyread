@@ -1,0 +1,9 @@
+{
+    "name": "enjoyread",
+    "description": "enjoyread project",
+    "version": "1.0.0",
+    "dependencies": {
+        "express": "4.*",
+        "jade": "1.*"
+    }
+}
