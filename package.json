@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "dependencies": {
         "express": "4.*",
-        "jade": "1.*"
+        "jade": "1.*",
+        "mysql": "2.*"
     }
 }
