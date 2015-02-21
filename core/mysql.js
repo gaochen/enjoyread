@@ -12,34 +12,33 @@
         _mysqlConfigFile = mysqlConfigFile;
         which = which;
         var config = JSON.parse(fs.readFileSync(mysqlConfigFile).toString());
-        if (which) 
+        if (which) {
             config = config[which];
+        }
         var connection = _lastConnection = mysql.createConnection(config);
         return connection;
     }
 
-    module.exports.getData = function(sql, params, conn) {
-        var conn = conn || lastConnection || connect(_mysqlConfigFile, _which);
-        if (params) {
-            
-        }
-
-    
+    module.exports.getData = function(callback, sql, params, conn) {
+        var conn = conn || _lastConnection || connect(_mysqlConfigFile, _which);
+        sql = sqlFilter(sql, params, conn);
+        conn.query(sql, function(err, result) {
+            callback(err, result);
+        });
     }
 
     module.exports.runSql = function(sql, param, conn) {
-        var conn = conn || lastConnection || connect(_mysqlConfigFile, _which);
+        var conn = conn || _lastConnection || connect(_mysqlConfigFile, _which);
         var sql = sqlFilter(sql, param, conn);
     }
 
     module.exports.getLine = function(sql, param, conn) {
-        var conn = conn || lastConnection || connect(_mysqlConfigFile, _which);
+        var conn = conn || _lastConnection || connect(_mysqlConfigFile, _which);
         var sql = sqlFilter(sql, param, conn);
-    
     }
 
     module.exports.getCol = function(sql, param, conn) {
-        var conn = conn || lastConnection || connect(_mysqlConfigFile, _which);
+        var conn = conn || _lastConnection || connect(_mysqlConfigFile, _which);
         var sql = sqlFilter(sql, param, conn);
     }
 

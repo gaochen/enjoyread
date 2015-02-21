@@ -1,0 +1,8 @@
+{
+    "enjoyread" : {
+        "host": "localhost",
+        "user": "enjoy",
+        "password": "enjoypass",
+        "database": "enjoyread"
+    }
+}
