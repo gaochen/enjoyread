@@ -1,0 +1,11 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\000031}}
+body {
+  background-color: red;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\000034}}
+.wrap {
+  width: 100%;
+  height: 100%;
+  background-image: url();
+  border: 1px solid #CCC;
+}
