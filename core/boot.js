@@ -6,11 +6,18 @@
     module.exports = function(app) {
         fs.readdirSync(__dirname + '/../controllers').forEach(function(name){
             var controller = require(__dirname + '/../controllers/' + name);
-            for (var action in controller) {
-                if (~['after', 'before'].indexOf(action)) continue;
-                var path = '/' + name.toLowerCase().replace('.js', '') + '/' + action.toLowerCase();
-                var method = controller[action].method || 'get';
-                app[method](path, controller[action]);
+            for (var method in controller) {
+                for (var action in controller[method]) {
+                    if (~['after', 'before'].indexOf(action)) continue;
+                    var path = '/';
+                    if (name !== 'index.js') {
+                        path += '/' + name.toLowerCase().replace('.js', '');
+                    }
+                    if (action !== 'index') {
+                        path += action.toLowerCase();
+                    }
+                    app[method](path, controller[method][action]);
+                }
             }
         });
 
