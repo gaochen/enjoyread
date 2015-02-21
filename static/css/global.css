@@ -68,3 +68,11 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/global\.less}line{font-family:\0000325}}
+.fl {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/global\.less}line{font-family:\0000328}}
+.fr {
+  float: right;
+}
