@@ -1,6 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
+.blankH(@height) {
+	height:@height;
+	font-size: 0;
+	overflow: hidden;
+}
+
 body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,
 dd,input{margin:0; padding:0; border:0;}
 img{border:none;}
@@ -27,4 +33,11 @@ a:hover {
 }
 .fr {
 	float: right;
+}
+
+.blankH60 {
+	.blankH(60px);
+}
+.blankH24 {
+	.blankH(24px);
 }

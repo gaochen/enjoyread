@@ -95,18 +95,3 @@ body {
 .start:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000385}}
-.login_box {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000390}}
-.login_content {
-  width: 400px;
-  height: 300px;
-  background: #FFF;
-  position: relative;
-  top: -30%;
-  left: -50%;
-}
