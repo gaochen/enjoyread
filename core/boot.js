@@ -16,6 +16,9 @@
                     if (action !== 'index') {
                         path += action.toLowerCase();
                     }
+                    if (controller['before']) {
+                        app.use(controller['before']);
+                    }
                     app[method](path, controller[method][action]);
                 }
             }
