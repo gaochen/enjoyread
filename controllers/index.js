@@ -27,7 +27,7 @@
 
         index: function(req, res, next) {
             console.log(req.session.uid);
-            res.render('home');
+            res.render('home', {uid: req.session.uid});
         },
 
         doc: function(req, res, next) {

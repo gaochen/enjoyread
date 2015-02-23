@@ -46,17 +46,18 @@ require(["jquery"],function($) {
 				var email=$(".mail_input").val();
 				var password=$(".password_input").eq(0).val();
 				$.post("register",{"email":email,"password":password},function(data) {
-					alert(data.code);
-					switch(true) {
-						case data.code==1001 :
+					switch(data.code) {
+						case 10001 :
 							$(".mail_error").text("此邮箱已存在");
 							break;
-						case data.code==1002 :
+						case 10002 :
 							$(".mail_error").text("邮箱格式错误");
 							break;
-						case data.code==1004 :
+						case 10004 :
 							$(".mail_error").text("密码格式错误");
 							break;
+						case 0 : 
+							location.href="/";
 					}
 				},"json")
 			}
