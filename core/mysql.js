@@ -4,6 +4,7 @@
     var mysql = require('mysql');
     var fs = require('fs');
     var util = require('util');
+    var Promise = require('promise');
     var _lastConnection;
     var _mysqlConfigFile;
     var _which;
@@ -19,47 +20,76 @@
         return connection;
     }
 
-    module.exports.getData = function(callback, sql, params, conn) {
-        var conn = conn || _lastConnection || connect(_mysqlConfigFile, _which);
-        sql = sqlFilter(sql, params, conn);
-        conn.query(sql, function(err, result) {
-            callback(err, result);
-        });
-    }
-
     module.exports.runSql = function(sql, param, conn) {
         var conn = conn || _lastConnection || connect(_mysqlConfigFile, _which);
         var sql = sqlFilter(sql, param, conn);
+        return new Promise(function(resolve, reject){
+            conn.query(sql, function(err, result) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(result);
+                }
+            });
+        });
+        
     }
 
     module.exports.getLine = function(sql, param, conn) {
-        var conn = conn || _lastConnection || connect(_mysqlConfigFile, _which);
-        var sql = sqlFilter(sql, param, conn);
+        var that = this;
+        return new Promise(function(resolve, reject) {
+            that.runSql(sql, param, conn).then(function(result){
+                resolve(result[0]);
+            }, function(err) {
+                reject(err);
+            });
+        });
+    }
+
+    module.exports.getVar = function(sql, param, key, conn) {
+        var that = this;
+        return new Promise(function(resolve, reject) {
+            that.runSql(sql, param, conn).then(function(result){
+                if (result.length > 0) {
+                    resolve(result[0][key]);
+                } else {
+                    resolve(null);
+                }
+            }, function(err) {
+                reject(err);
+            });
+        });
     }
 
     module.exports.getCol = function(sql, param, conn) {
-        var conn = conn || _lastConnection || connect(_mysqlConfigFile, _which);
-        var sql = sqlFilter(sql, param, conn);
+        var that = this;
+        return new Promise(function(resolve, reject) {
+            that.runSql(sql, param, conn).then(function(result){
+                var tresult = [];
+                for (var i = 0, j = res.length; i < j; i++) {
+                    tresult.push(result[i][key]);
+                }
+                resolve(tresult);
+            }, function(err) {
+                reject(err);
+            });
+        });
     }
 
     function sqlFilter(sql, params, connection) {
         var piece;
         var result = ''; 
-        var pieces = sql.split(/(%s|%i)/);
+        var pieces = sql.split(/(\?)/);
         var i = 0;
 
         while (piece = pieces.shift()) {
-            if (piece === '%s') {
-                result += "'" + connection.escape(params[i]) + "'";
-                i++;
-            }   
-            else if (piece === '%i') {
+            if (piece === '?') {
                 result += connection.escape(params[i]);
                 i++;
             } else {
                 result += piece;
             }   
-        }   
+        }
         return result;
     }
 }());

@@ -5,6 +5,11 @@
     "dependencies": {
         "express": "4.*",
         "jade": "1.*",
-        "mysql": "2.*"
+        "mysql": "2.*",
+        "body-parser": "1.*",
+        "body": "5.*",
+        "json": "9.*",
+        "multer": "0.*",
+        "promise": "6.*"
     }
 }
