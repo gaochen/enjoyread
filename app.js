@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 
+var session = require('express-session');
+
 // set template engine to jade
 app.set('view engine', 'jade');
 
@@ -18,6 +20,13 @@ var multer = require('multer');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(multer());
+
+// use session
+app.use(session({
+    secret: '7Okd&#$1ldP',
+    resave: false,
+    saveUninitialized: false,
+}));
 
 require('./core/boot.js')(app);
 
