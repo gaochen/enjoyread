@@ -26,6 +26,7 @@
         },
 
         index: function(req, res, next) {
+            console.log(req.session.uid);
             res.render('home');
         },
 
@@ -42,17 +43,39 @@
 
         login: function(req, res) {
             var email = req.body.email;
-            var password = encodePassword(req.body.password);
-            validUser(email, password).then(function(){
+            var password = req.body.password;
+            if ( !(email && password) ) {
+                res.send(lib.genAjaxRet(10001, lib.s('INVALID_EMAIL')));
+                clearup();
+                return;
+            }
+            password = encodePassword(password);
+            validUser(email, password).then(function(id){
+                req.session.uid = id;
                 res.send(lib.genAjaxRet(0));
+                clearup();
             }, function() {
                 var msg = lib.s('LOGIN_FAILED');
                 res.send(lib.genAjaxRet(10003, msg));
+                clearup();
             });
         },
 
         register: function(req, res) {
             var email = req.body.email;
+            var password = req.body.password;
+            if ( !(email && password) ) {
+                res.send(lib.genAjaxRet(10001, lib.s('INVALID_EMAIL')));
+                res.end();
+                clearup();
+                return;
+            }
+
+            if (password.length < 6 || password.length > 12) {
+                res.send(lib.genAjaxRet(10004, lib.s('INVALID_PASSWORD')));
+                clearup();
+                return;
+            }
             var password = encodePassword(req.body.password);
 
             if (!validEmail(email)) {
@@ -60,6 +83,7 @@
                 var ret = lib.genAjaxRet(10002, msg);
                 res.send(ret);
                 clearup();
+                return;
             }
 
             var sql = 'into user(email, password) value (?, ?)';
@@ -80,12 +104,12 @@
 
     function validUser(email, password) {
         return new Promise(function(resolve, reject) {
-            var sql = 'select password from user where email = ?';
-            mysql.getVar(sql, [email], 'password').then(function(realPassword) {
-                if (realPassword !== password) {
+            var sql = 'select id, password from user where email = ?';
+            mysql.getLine(sql, [email]).then(function(user) {
+                if (user['password'] !== password) {
                     reject();
                 } else {
-                    resolve();
+                    resolve(user['id']);
                 }
             });
         });
@@ -119,10 +143,11 @@
     }
 
     function validEmail(email) {
+        if (email.length > 100) {
+            return false;
+        }
         return email.match(/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9-]+[\.a-zA-Z]+$/);
     }
 
 }());
-
-
 
