@@ -26,7 +26,6 @@
         },
 
         index: function(req, res, next) {
-            console.log(req.session.uid);
             res.render('home', {uid: req.session.uid});
         },
 
@@ -106,7 +105,7 @@
         return new Promise(function(resolve, reject) {
             var sql = 'select id, password from user where email = ?';
             mysql.getLine(sql, [email]).then(function(user) {
-                if (user['password'] !== password) {
+                if (user === null || user['password'] !== password) {
                     reject();
                 } else {
                     resolve(user['id']);

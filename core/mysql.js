@@ -39,7 +39,11 @@
         var that = this;
         return new Promise(function(resolve, reject) {
             that.runSql(sql, param, conn).then(function(result){
-                resolve(result[0]);
+                if (result.length >= 1) {
+                    resolve(result[0]);
+                } else {
+                    resolve(null);
+                }
             }, function(err) {
                 reject(err);
             });

@@ -8,7 +8,7 @@ require(["jquery"],function($) {
 	$(function() {
 		$(".login_btn").click(function() {
 
-			var email=$(".email_input").val();
+			var email=$(".mail_input").val();
 			var password=$(".password_input").val();
 			$.post("login",{"email":email,"password":password},function(data) {
 				switch(data.code) {
