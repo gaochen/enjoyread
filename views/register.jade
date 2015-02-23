@@ -1,0 +1,41 @@
+
+doctype html
+html(lang="en")
+	head
+		tilte= 注册		
+		meta(chartset="UTF-8")
+		link(href="/global.css" rel="stylesheet" type="text/css")
+		link(href="/register.css" rel="stylesheet" type='text/css')
+		script(src="/requireJs.js" type="text/javascript" data-main="/register")
+
+		
+	body
+		div(class="blankH60")
+		div(class="register_box")
+			a(class="register_logo" href="#") EnjoyRead
+			div(class="mail clearfix")
+				div(class="mail_logo")
+				input(type="text" class="mail_input" placeholder="请设置您的邮箱")
+			div(class="mail_error")
+			div(class="password clearfix")
+				div(class="password_logo")
+				input(type="password" class="password_input" placeholder="请设置您的密码")
+			div(class="password_error")
+			div(class="password clearfix")
+				div(class="password_logo")
+				input(type="password" class="password_input" placeholder="请再次输入您的密码")
+			div(class="password_error")
+			input(type="button" class="register_btn" value="注册")
+			div(class="blankH24")
+			div(class="title") 使用第三方登陆
+			ul(class="list clearfix")
+				li
+					a(class="weibo" href="#")
+				li 
+					a(class="qq" href="#")
+
+
+
+
+
+
