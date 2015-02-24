@@ -11,6 +11,10 @@
         next();
     }
 
+    module.exports.after = function(req, res, next) {
+        console.log("after called");
+    }
+
     function clearup() {
         connect.destroy();
     }
