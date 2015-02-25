@@ -7,8 +7,8 @@ require.config({
 require(["jquery"],function($) {
 	$(function() {
 		$(".logout").click(function() {
-			$.get("logout",function() {
-				
+			$.get("logout",function(data) {
+				location.href="/";
 			})
 		})
 	})
