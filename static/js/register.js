@@ -37,31 +37,37 @@ require(["jquery"],function($) {
 		})
 
 		$(".register_btn").click(function() {
-			switch(true) {
-				
-			}
-
-
-			if($(".mail_error").val()=="" || $(".password_error").val()=="") {
-				var email=$(".mail_input").val();
-				var password=$(".password_input").eq(0).val();
-				$.post("register",{"email":email,"password":password},function(data) {
-					switch(data.code) {
-						case 10001 :
-							$(".mail_error").text("此邮箱已存在");
-							break;
-						case 10002 :
-							$(".mail_error").text("邮箱格式错误");
-							break;
-						case 10004 :
-							$(".mail_error").text("密码格式错误");
-							break;
-						case 0 : 
-							location.href="/";
-					}
-				},"json")
+			if($(".mail_error").text()=="" && $(".password_error").text()=="") {
+				switch(true) {
+					case $(".mail_input").val()=="":
+						$(".mail_error").text("请先填写邮箱");
+						break;
+					case $(".password_input").eq(0).val()=="":
+						$(".password_error").eq(0).text("请先填写密码");
+						break;
+					case $(".password_input").eq(1).val()=="":
+						$(".password_error").eq(1).text("请再次输入密码");
+						break;
+					default:
+						var email=$(".mail_input").val();
+						var password=$(".password_input").eq(0).val();
+						$.post("register",{"email":email,"password":password},function(data) {
+							switch(data.code) {
+								case 10001 :
+									$(".mail_error").text("此邮箱已存在");
+									break;
+								case 10002 :
+									$(".mail_error").text("邮箱格式错误");
+									break;
+								case 10004 :
+									$(".mail_error").text("密码格式错误");
+									break;
+								case 0 : 
+									location.href="/";
+							}
+						},"json")
+				}
 			}
 		})
-
 	})
 })

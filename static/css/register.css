@@ -140,15 +140,20 @@ body {
   border-radius: 5px;
   color: #FFF;
   cursor: pointer;
+  transition: 0.8s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003128}}
+.register_btn:hover {
+  background: rgba(140, 95, 2, 0.8);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003131}}
 .other_way {
   width: 400px;
   height: auto;
   margin-top: 40px;
   margin: 0 auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003137}}
 .other_way_left {
   width: 180px;
   height: 40px;
@@ -156,12 +161,12 @@ body {
   font-size: 16px;
   text-align: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003144}}
 .other_way_right {
   width: 220px;
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003148}}
 .other_way_right a {
   display: block;
   width: 120px;
@@ -174,34 +179,34 @@ body {
   margin: 5px 0;
   font-size: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003160}}
 .title {
   width: auto;
   height: auto;
   text-align: center;
   font-size: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003166}}
 .list {
   width: 202px;
   height: auto;
   margin: 0 auto;
   margin-top: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003172}}
 .list li {
   width: 51px;
   height: 42px;
   margin: 0 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003173}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003177}}
 .weibo {
   width: 51px;
   height: 42px;
   background: url(/login_01.png);
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/register\.less}line{font-family:\00003183}}
 .qq {
   width: 51px;
   height: 42px;
