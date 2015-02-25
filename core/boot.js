@@ -7,11 +7,12 @@
         fs.readdirSync(__dirname + '/../controllers').forEach(function(name){
             var controller = require(__dirname + '/../controllers/' + name);
             for (var method in controller) {
+                var cpath = name.toLowerCase().replace('.js', '');
                 for (var action in controller[method]) {
                     if (~['after', 'before'].indexOf(action)) continue;
                     var path = '/';
                     if (name !== 'index.js') {
-                        path += '/' + name.toLowerCase().replace('.js', '');
+                        path +='/' + cpath;
                     }
                     if (action !== 'index') {
                         path += action.toLowerCase();
@@ -23,9 +24,6 @@
                 }
             }
         });
-
     }
-
-    
 
 }());

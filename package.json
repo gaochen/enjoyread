@@ -11,6 +11,7 @@
         "json": "9.*",
         "multer": "0.*",
         "promise": "6.*",
-        "express-session": "1.*"
+        "express-session": "1.*",
+        "on-finished": "2.*"
     }
 }
