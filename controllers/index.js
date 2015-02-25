@@ -11,10 +11,6 @@
         next();
     }
 
-    module.exports.after = function(req, res, next) {
-        console.log("after called");
-    }
-
     function clearup() {
         connect.destroy();
     }
@@ -40,6 +36,11 @@
         about: function(req, res, next) {
             res.render('about');
         },
+
+        logout: function(req, res, next) {
+            req.session.destroy();
+            res.end('success');
+        }
     };
 
     module.exports.post = {

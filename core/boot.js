@@ -22,11 +22,8 @@
                     }
                     app[method](path, controller[method][action]);
                 }
-                app.use(cpath, controller['after']);
             }
         });
     }
-
-    
 
 }());
