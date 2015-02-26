@@ -1,0 +1,42 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\000033}}
+body {
+  background-image: url(/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\000038}}
+.guide {
+  width: 600px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.6);
+  margin: 30px auto 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\0000314}}
+.guide_pic {
+  width: 490px;
+  height: 30px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\0000320}}
+.guide_pic_number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  background: #999;
+  color: #FFF;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\0000330}}
+.guide_pic_line {
+  width: 200px;
+  height: 4px;
+  background: #999;
+  margin-top: 13px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\0000336}}
+.guide_pic .active {
+  background: #8c5f02;
+}
