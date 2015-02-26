@@ -5,23 +5,11 @@ html(lang="en")
 		meta(chartset="UTF-8")
 		link(href="/global.css" rel="stylesheet" type="text/css")
 		link(href="/index.css" rel="stylesheet" type='text/css')
-		script(src="/requireJs.js" type="text/javascript" data-main="/index")
+		link(href="/header.css" rel="stylesheet" type='text/css')
+		script(src="/requireJs.js" type="text/javascript" data-main="/header")
 		
 	body
-		div(class='header clearfix')
-			a(class="logo fl" href="#") EnjoyRead
-			ul(class="nav fr")
-				li
-					a(href="#") 指南
-				li
-					if uid
-						a(href="#") 设置
-					else 
-						a(href="/login") 登陆
-				if uid
-					li(class="logout") 登出
-				li 	
-					a(href="#") 关于
+		include header.jade
 					
 		div(class="wrap #{uid}")
 			div(class="wrap_box")

@@ -5,47 +5,6 @@ body {
   background-size: cover;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\000036}}
-.header {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000313}}
-.logo {
-  width: auto;
-  height: 50px;
-  line-height: 50px;
-  font-size: 24px;
-  color: #FFF;
-  margin-left: 40px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000321}}
-.nav {
-  width: auto;
-  height: 50px;
-  margin-right: 40px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000326}}
-.nav li {
-  width: auto;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 20px;
-  color: #FFF;
-  cursor: pointer;
-  transition: 0.3s;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000335}}
-.nav li:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000338}}
-.nav li a {
-  color: #FFF;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000341}}
 .wrap {
   width: 100%;
   height: 100%;
@@ -55,13 +14,13 @@ body {
   left: 0;
   z-index: -1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000315}}
 .wrap_box {
   position: absolute;
   top: 40%;
   left: 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000320}}
 .wrap_content {
   width: 100%;
   height: auto;
@@ -69,7 +28,7 @@ body {
   top: -40%;
   left: -50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000327}}
 .slogan {
   width: 100%;
   height: 100%;
@@ -77,7 +36,7 @@ body {
   color: #FFF;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000334}}
 .start {
   width: 120px;
   height: 40px;
@@ -91,7 +50,7 @@ body {
   border-radius: 5px;
   transition: 0.3s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/index\.less}line{font-family:\0000347}}
 .start:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
