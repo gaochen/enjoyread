@@ -40,6 +40,10 @@
         logout: function(req, res, next) {
             req.session.destroy();
             res.end('success');
+        },
+
+        quickstart: function(req, res, next) {
+            res.render('quickstart');
         }
     };
 
