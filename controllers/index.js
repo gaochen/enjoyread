@@ -17,34 +17,42 @@
 
     module.exports.get = {
 
-        login: function(req, res, next) {
+        login: function(req, res) {
             res.render('login');
         },
 
-        register: function(req, res, next) {
+        register: function(req, res) {
             res.render('register');
         },
 
-        index: function(req, res, next) {
+        index: function(req, res) {
             res.render('home', {uid: req.session.uid});
         },
 
-        doc: function(req, res, next) {
+        doc: function(req, res) {
             res.render('doc');
         },
 
-        about: function(req, res, next) {
+        about: function(req, res) {
             res.render('about');
         },
 
-        logout: function(req, res, next) {
+        logout: function(req, res) {
             req.session.destroy();
             res.end('success');
         },
 
-        quickstart: function(req, res, next) {
+        quickstart: function(req, res) {
             res.render('quickstart');
-        }
+        },
+
+        rss: function(req, res) {
+            mysql.runSql('select id, name, picture from rss where type = "OFFICAL"').then(function(result) {
+                res.end(JSON.stringify(result));
+            }, function(err) {
+                console.log(err);
+            });
+        },
 
     };
 
