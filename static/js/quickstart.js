@@ -27,18 +27,23 @@ require(["jquery"],function($) {
 
 		$(".guide_next").eq(0).click(function() {
 			if($(".guide_input").eq(0).val()=="") {
-				$(".guide_error").text("请先填写常用邮箱");
+				$(".guide_error").eq(0).text("请先填写常用邮箱");
 			}
 			else if($(".guide_error").text()!="") {
 				return false;
 			}
 			else {
 				var email=$(".guide_input").eq(0).val();
-				// $.post(url,{"email":email},function(data) {
-				// })
-				$(".guide_content_ul").animate({"left":"-600px"},"fast","swing");
-				$(".guide_pic_number").eq(0).addClass("active");
-				$(".guide_pic_line").eq(0).addClass("active");
+				$.post("emailexists",{"email":email},function(data) {
+					if(data.code==0) {
+						$(".guide_content_ul").animate({"left":"-600px"},"fast","swing");
+						$(".guide_pic_number").eq(0).addClass("active");
+						$(".guide_pic_line").eq(0).addClass("active");
+					}
+					else {
+						$(".guide_error").eq(0).text("该邮箱已存在");
+					}
+				})
 			}
 		})
 
