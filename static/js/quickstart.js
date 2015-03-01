@@ -43,7 +43,7 @@ require(["jquery"],function($) {
 					else {
 						$(".guide_error").eq(0).text("该邮箱已存在");
 					}
-				})
+				},"json")
 			}
 		})
 
