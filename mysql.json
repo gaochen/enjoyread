@@ -1,6 +1,6 @@
 {
     "enjoyread" : {
-        "host": "localhost",
+        "host": "115.28.6.205",
         "user": "enjoy",
         "password": "enjoypass",
         "database": "enjoyread"
