@@ -45,9 +45,26 @@
         quickstart: function(req, res, next) {
             res.render('quickstart');
         }
+
     };
 
     module.exports.post = {
+
+        setting: function(req, res) {
+        
+        },
+
+        emailexists: function(req, res) {
+            var email = req.body.email;
+            emailAlreadExists(email).then(
+                function() {res.end(lib.genAjaxRet(0))}, 
+                function() {res.end(lib.genAjaxRet(10001, lib.s('EMAIL_EXISTS')))});
+        },
+
+        quickstart: function(req, res) {
+            var email = req.body.email;
+            var rss = req.body.rss;
+        },
 
         login: function(req, res) {
             var email = req.body.email;
