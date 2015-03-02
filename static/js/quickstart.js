@@ -58,5 +58,13 @@ require(["jquery"],function($) {
 				$(".guide_error_two").show();
 			}
 		})
+
+		$(".guide_back").eq(0).click(function() {
+			$(".guide_content_ul").animate({"left":"0"},"fast","swing");
+		})
+
+		$(".guide_back").eq(1).click(function() {
+			$(".guide_content_ul").animate({"left":"-600px"},"fast","swing");
+		})
 	})
 })
