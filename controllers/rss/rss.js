@@ -17,6 +17,7 @@
         var that = this;
         return new Promise(function(resolve, reject) {
             mysql.getLine('select * from rss where id = ?', [that.id]).then(function(result) {
+                that.connect.destroy();
                 if (!result) {
                     throw new Error('no such rss');
                 }
@@ -24,9 +25,9 @@
                 that.name = result['name'];
                 that.picture = result['picture'];
                 that.type = result['type'];
-                resolve(that);
+                resolve.call(that, that);
             }, function(err) {
-                reject(err);
+                reject.call(that, that);
             });
         });
     };
@@ -40,9 +41,9 @@
     }
 
     Rss.prototype.getxml = function(rss) {
-        var that = this;
+        var that = rss;
         return new Promise(function(resolve, reject){
-            var req = request(rss.url, {timeout: 10000, pool: false});
+            var req = request(that.url, {timeout: 10000, pool: false});
             var feedparser = new FeedParser();
             req.on('error', reject);
             req.on('response', function(res) {
@@ -71,8 +72,8 @@
     }
 
     var a = new Rss(1);
-    a.init().then(a.getxml).then(function(err) {
-        console.log(111);
+    a.init().then(a.getxml).then(function(result) {
+        console.log(result);
     }, function(err) {
         console.log(err);
     });
