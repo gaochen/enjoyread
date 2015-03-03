@@ -13,6 +13,14 @@ require(["jquery"],function($) {
 			})
 		})
 
+		//获取标签值
+		// $.get(url,function(data) {
+		// 	$.each(data,function(i) {
+		// 		var oLi=$('<li><input type="checkbox" id="+data[i].id+" /><label for="+data[i].id+">"+data[i].name+"</label><img src="+data[i].picture+" /></li>').appendTo($(".guide_checkbox"));
+		// 	})
+		// },"json")
+		
+		//邮箱输入框验证
 		$(".guide_input").eq(0).blur(function() {
 			var email=$(this).val();
 			var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/; 
@@ -25,6 +33,8 @@ require(["jquery"],function($) {
 			}		
 		})
 
+
+		//第一步的下一步按钮
 		$(".guide_next").eq(0).click(function() {
 			if($(".guide_input").eq(0).val()=="") {
 				$(".guide_error").eq(0).text("请先填写常用邮箱");
@@ -47,6 +57,8 @@ require(["jquery"],function($) {
 			}
 		})
 
+
+		//第二步的下一步按钮
 		$(".guide_next").eq(1).click(function() {
 			//var bool=false;
 			if($(".guide_checkbox").find("input").is(":checked")) {
@@ -59,10 +71,13 @@ require(["jquery"],function($) {
 			}
 		})
 
+
+		//第二步返回第一步的按钮
 		$(".guide_back").eq(0).click(function() {
 			$(".guide_content_ul").animate({"left":"0"},"fast","swing");
 		})
 
+		//第三步返回第二步的按钮
 		$(".guide_back").eq(1).click(function() {
 			$(".guide_content_ul").animate({"left":"-600px"},"fast","swing");
 		})

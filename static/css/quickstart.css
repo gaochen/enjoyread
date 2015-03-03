@@ -156,7 +156,7 @@ body {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003137}}
 .guide_checkbox {
   display: block;
-  width: 408px;
+  width: 480px;
   height: 120px;
   margin: 0 auto;
 }
@@ -164,7 +164,7 @@ body {
 .guide_checkbox li {
   width: auto;
   height: auto;
-  margin: 0 40px 19px 0;
+  margin: 0 20px 15px 20px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003148}}
 .guide_checkbox input {
@@ -175,12 +175,20 @@ body {
   cursor: pointer;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003155}}
+.guide_checkbox img {
+  width: 21px;
+  height: 21px;
+  position: relative;
+  top: 5px;
+  margin-left: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003162}}
 .guide_checkbox label {
   font-size: 16px;
-  margin-left: 12px;
+  margin-left: 5px;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003167}}
 .guide_error_two {
   width: 408px;
   height: 20px;
@@ -190,11 +198,11 @@ body {
   margin-bottom: 19px;
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003176}}
 .guide_content_explain a {
   color: #8c5f02;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003179}}
 .guide_done {
   width: 120px;
   height: 40px;
@@ -210,11 +218,11 @@ body {
   line-height: 40px;
   color: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003194}}
 .guide_done:hover {
   background: rgba(140, 95, 2, 0.8);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003197}}
 .guide_back {
   width: 24px;
   height: 24px;
@@ -225,7 +233,7 @@ body {
   opacity: 0.3;
   transition: 0.3s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/quickstart\.less}line{font-family:\00003207}}
 .guide_back:hover {
   transform: scale(1.5);
   opacity: 1;
