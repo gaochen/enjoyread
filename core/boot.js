@@ -5,6 +5,9 @@
 
     module.exports = function(app) {
         fs.readdirSync(__dirname + '/../controllers').forEach(function(name){
+            if (!name.match(/\.js$/)) {
+                return;
+            }
             var controller = require(__dirname + '/../controllers/' + name);
             for (var method in controller) {
                 var cpath = name.toLowerCase().replace('.js', '');
