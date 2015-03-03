@@ -81,5 +81,9 @@ require(["jquery"],function($) {
 		$(".guide_back").eq(1).click(function() {
 			$(".guide_content_ul").animate({"left":"-600px"},"fast","swing");
 		})
+
+		//第三步点击完成提交
+		//var email=$(".guide_input").eq(0).val();
+
 	})
 })
