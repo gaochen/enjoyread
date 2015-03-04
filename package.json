@@ -12,6 +12,8 @@
         "multer": "0.*",
         "promise": "6.*",
         "express-session": "1.*",
-        "on-finished": "2.*"
+        "on-finished": "2.*",
+        "feedparser": "1.*",
+        "request": "2.*"
     }
 }

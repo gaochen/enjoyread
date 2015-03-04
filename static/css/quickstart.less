@@ -78,11 +78,13 @@ body {
 	width:500px;
 	height:400px;
 	padding: 0 50px;
+	position: relative;
 }
 .guide_step_three {
 	width:500px;
 	height:400px;
 	padding: 0 50px;
+	position: relative;
 }
 .guide_content_title {
 	width:100%;
@@ -134,14 +136,14 @@ body {
 }
 .guide_checkbox {
 	display: block;
-	width:408px;
+	width:480px;
 	height: 120px;
 	margin:0 auto;
 }
 .guide_checkbox li {
 	width: auto;
 	height: auto;
-	margin:0 40px 19px 0;
+	margin:0 20px 15px 20px;
 }
 .guide_checkbox input {
 	width:16px;
@@ -150,9 +152,16 @@ body {
 	top: 2px;
 	cursor: pointer;
 }
+.guide_checkbox img {
+	width:21px;
+	height: 21px;
+	position: relative;
+	top: 5px;
+	margin-left: 5px;
+}
 .guide_checkbox label {
 	font-size: 16px;
-	margin-left:12px;
+	margin-left:5px;
 	cursor: pointer;
 }
 .guide_error_two {
@@ -184,4 +193,18 @@ body {
 }
 .guide_done:hover {
 	background:rgba(140, 95, 2, 0.8);
+}
+.guide_back {
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	position: absolute;
+	top: 20px;
+	left:20px;
+	opacity: 0.3;
+	transition:0.3s;
+}
+.guide_back:hover {
+	transform:scale(1.5);
+	opacity: 1;
 }
