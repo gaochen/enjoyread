@@ -1,0 +1,71 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\000031}}
+body {
+  background-image: url(/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\000038}}
+.wrap {
+  width: 900px;
+  min-height: 600px ;
+  position: relative;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000314}}
+.div1 {
+  width: 420px;
+  height: 280px;
+  background: #FFF;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0.3;
+  z-index: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000326}}
+.div2 {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  background: #FFF;
+  top: 100px;
+  left: 150px;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000338}}
+.div3 {
+  width: 420px;
+  height: 280px;
+  background: #FFF;
+  position: absolute;
+  top: 150px;
+  left: 480px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0.3;
+  z-index: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000350}}
+.left {
+  display: block;
+  width: 150px;
+  height: 280px;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000360}}
+.right {
+  display: block;
+  width: 150px;
+  height: 280px;
+  position: absolute;
+  top: 150px;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+}
