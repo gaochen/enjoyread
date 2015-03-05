@@ -20,4 +20,4 @@ function p(ex){
         }
     });
 }
-p(1).then(function(result){console.log(result)},function(reason){console.log(reason)});
+p(1).then(function(result){console.log(result)},function(reason){console.log(reason)})
