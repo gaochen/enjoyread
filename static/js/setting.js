@@ -7,8 +7,7 @@ require.config({
 require(["jquery"],function($) {
 	$(function() {
 		var arr=[];
-		var left_number=0;
-		var right_number=0;
+		var num=1;
 		$.each($(".wrap > div"),function(i) {
 			var opacity=$(this).css("opacity");
 			var num = new Number(opacity);
@@ -16,8 +15,19 @@ require(["jquery"],function($) {
 		})
 
 		$(".left").click(function() {
+
 			arr.push(arr[0]);
 			arr.shift();
+
+			$(".wrap_box").eq(num).addClass("smaller");
+
+			num--;
+
+			if(num<0) {
+				num=2;
+			}
+
+			$(".wrap_box").eq(num).removeClass("smaller");
 
 			$.each($(".wrap > div"),function(i) {
 				$(this).css("z-index",arr[i][5]);
@@ -28,6 +38,16 @@ require(["jquery"],function($) {
 		$(".right").click(function() {
 			arr.unshift(arr[arr.length-1]);
 			arr.pop();
+
+			$(".wrap_box").eq(num).addClass("smaller");
+
+			num++;
+
+			if(num>2) {
+				num=0;
+			}
+
+			$(".wrap_box").eq(num).removeClass("smaller");
 	
 			$.each($(".wrap > div"),function(i) {
 				$(this).css("z-index",arr[i][5]);
