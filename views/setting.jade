@@ -13,10 +13,32 @@ html(lang="en")
 		include header.jade
 
 		div(class="wrap #{uid}")
-			div(class="div1") 00000
-			div(class="div2") 11111
-			div(class="div3") 22222
+			div(class="div1") 
+				div(class="wrap_box smaller") 修改设置
+			div(class="div2") 
+				div(class="wrap_box")
+					div(class="change_password_title") 修改密码
+					div(class="blankH20")
+					div(class="change_row clearfix")
+						div(class="change_row_contL fl") 原密码
+						div(class="change_row_cotnR fr")
+							input(class="present_input" type="password")
+							div(class="change_error")
+					div(class="change_row clearfix")
+						div(class="change_row_contL fl") 新密码
+						div(class="change_row_cotnR fr")
+							input(class="present_input" type="password")
+							div(class="change_error")
+					div(class="change_row clearfix")
+						div(class="change_row_contL fl") 再次输入
+						div(class="change_row_cotnR fr")
+							input(class="present_input" type="password")
+							div(class="change_error")
+					a(href="javascript:void(0);" class="change_password_btn") 提交
 
+
+			div(class="div3") 
+				div(class="wrap_box smaller") 待定
 			a(class="left" href="javascript:void(0);")
 			a(class="right" href="javascript:void(0);")
 
