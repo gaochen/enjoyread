@@ -52,6 +52,7 @@ require(["jquery"],function($) {
 						var email=$(".mail_input").val();
 						var password=$(".password_input").eq(0).val();
 						$.post("register",{"email":email,"password":password},function(data) {
+                            console.log(data);
 							switch(data.code) {
 								case 10001 :
 									$(".mail_error").text("此邮箱已存在");
@@ -63,7 +64,7 @@ require(["jquery"],function($) {
 									$(".mail_error").text("密码格式错误");
 									break;
 								case 0 : 
-									location.href=location.href;
+									location.href="/setting";
 							}
 						},"json")
 				}

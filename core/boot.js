@@ -23,7 +23,6 @@
                     if (action !== 'index') {
                         path += action.toLowerCase();
                     }
-                    
                     app[method](path, controller[method][action]);
                 }
             }

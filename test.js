@@ -20,4 +20,7 @@ function p(ex){
         }
     });
 }
-p(1).then(function(result){console.log(result)},function(reason){console.log(reason)})
+var p1 = p(1);
+p1.then(function(result){console.log(1);},function(reason){console.log(reason)})
+    .then(function(res){console.log(2);return p1},function(reason){})
+    .then(function(){console.log(3)})
