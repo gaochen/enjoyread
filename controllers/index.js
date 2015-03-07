@@ -62,7 +62,7 @@
 
         emailexists: function(req, res) {
             var email = req.body.email;
-            User.emailAlreadExists(email).then(
+            User.emailAlreadyExists(email).then(
                 function() {res.end(lib.genAjaxRet(0))}, 
                 function() {res.end(lib.genAjaxRet(10001, lib.s('EMAIL_EXISTS')))});
         },
