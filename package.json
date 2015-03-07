@@ -1,19 +1,22 @@
 {
-    "name": "enjoyread",
-    "description": "enjoyread project",
-    "version": "1.0.0",
-    "dependencies": {
-        "express": "4.*",
-        "jade": "1.*",
-        "mysql": "2.*",
-        "body-parser": "1.*",
-        "body": "5.*",
-        "json": "9.*",
-        "multer": "0.*",
-        "promise": "6.*",
-        "express-session": "1.*",
-        "on-finished": "2.*",
-        "feedparser": "1.*",
-        "request": "2.*"
-    }
+  "name": "enjoyread",
+  "description": "enjoyread project",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "4.*",
+    "jade": "1.*",
+    "mysql": "2.*",
+    "body-parser": "1.*",
+    "body": "5.*",
+    "json": "9.*",
+    "multer": "0.*",
+    "promise": "6.*",
+    "express-session": "1.*",
+    "on-finished": "2.*",
+    "feedparser": "1.*",
+    "request": "2.*"
+  },
+  "devDependencies": {
+    "should": "^5.1.0"
+  }
 }
