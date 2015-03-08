@@ -58,6 +58,15 @@
     module.exports.post = {
 
         setting: function(req, res) {
+            var rss = req.body.rss;
+            var pushtime = req.body.pushtime;
+            var setting = new Setting(uid);
+                setting.init().then(function() {
+                setting.rss = rss;
+                setting.pushtime = pushtime;
+                setting.save();
+                res.end('success')  ;
+            });
             
         },
 

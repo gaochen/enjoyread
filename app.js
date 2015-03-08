@@ -30,8 +30,6 @@ app.use(session({
 
 require('./core/boot.js')(app);
 
-
-
 //var mysql = require('./core/mysql.js');
 //var conn = mysql.connect('./mysql.json', 'enjoyread');
 //mysql.getData(function(err, res) {
