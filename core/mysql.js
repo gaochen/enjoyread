@@ -23,6 +23,7 @@
     module.exports.runSql = function(sql, param, conn) {
         var conn = conn || _lastConnection || connect(_mysqlConfigFile, _which);
         var sql = sqlFilter(sql, param, conn);
+        console.log(sql);
         return new Promise(function(resolve, reject){
             conn.query(sql, function(err, result) {
                 if (err) {

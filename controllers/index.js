@@ -5,6 +5,7 @@
     var mysql = require(__dirname + '/../core/mysql');
     var lib = require(__dirname + '/../core/lib');
     var User = require(__dirname + '/modal/user');
+    var Setting = require(__dirname + '/modal/setting');
 
     module.exports.before = function(req, res, next) {
         next();
@@ -70,6 +71,18 @@
         quickstart: function(req, res) {
             var email = req.body.email;
             var rss = req.body.rss;
+            User.addUser(email, '123456').then(function(uid) {
+                var setting = new Setting(uid);
+                setting.init().then(function() {
+                    setting.rss = rss;
+                    setting.save();
+                    res.end('success');
+                }, function(err) {
+                    console.log(err);
+                });
+            }, function(err) {
+                console.log(err);
+            });
         },
 
         login: function(req, res) {
@@ -111,7 +124,6 @@
                 return;
             }
 
-            var sql = 'into user(email, password) value (?, ?)';
             User.emailAlreadyExists(email).then(function() {
                 User.addUser(email, password)
                     .then(function(id) {

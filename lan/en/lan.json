@@ -2,5 +2,7 @@
     "EMAIL_EXISTS": "The email is already exists",
     "INVALID_EMAIL": "The email is invalid",
     "LOGIN_FAILED": "Incorrect email or password",
-    "INVALID_PASSWORD": "The password is invalid"
+    "INVALID_PASSWORD": "The password is invalid",
+    "CHANGE_PASSWORD_FAILED": "Change password failed",
+    "ACCESS_DENY": "Access deny"
 }

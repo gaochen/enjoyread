@@ -4,9 +4,10 @@
     var mysql = require(__dirname + '/../../core/mysql');
     var connect = mysql.connect(__dirname + '/../../mysql.json', 'enjoyread');;
 
-    var proto = module.exports = function(email, password) {
+    var proto = module.exports = function(id, email, password) {
         this.email = email;
         this.password = password;
+        this.id = id;
     }
 
     proto.prototype.save = function() {
@@ -16,7 +17,7 @@
         });
     }
 
-    proto.prototype.get = function(id) {
+    proto.prototype.get = function() {
         var that = this;
         return new Promise(function(resolve, reject) {
             mysql.getLine('select * from user where id = ?', [id])
@@ -46,6 +47,17 @@
             return false;
         }
         return email.match(/^[a-zA-Z0-9_\.]+@[a-zA-Z0-9-]+[\.a-zA-Z]+$/);
+    }
+
+    proto.prototype.changePassword = function(password) {
+        return new Promise(function(resolve, reject) {
+            var sql = 'update user set password = ? where id = ?';
+            mysql.runSql(sql, [User.encodePassword, this.id]).then(function() {
+                resolve();
+            }, function(error) {
+                reject(error);
+            });
+        });
     }
 
     proto.validUser = function(email, password) {
