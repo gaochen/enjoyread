@@ -7,88 +7,18 @@ body {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000317}}
 .wrap {
   width: 900px;
-  min-height: 600px ;
+  height: auto;
   position: relative;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.7);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000323}}
-.div1 {
-  width: 420px;
-  height: 280px;
-  background: #FFF;
-  position: absolute;
-  top: 150px;
-  left: 0;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  opacity: 0.3;
-  z-index: 1;
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000324}}
+.wrap_change {
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000335}}
-.div2 {
-  width: 600px;
-  height: 400px;
-  position: absolute;
-  background: #FFF;
-  top: 100px;
-  left: 150px;
-  z-index: 2;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  opacity: 1;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000347}}
-.div3 {
-  width: 420px;
-  height: 280px;
-  background: #FFF;
-  position: absolute;
-  top: 150px;
-  left: 480px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  opacity: 0.3;
-  z-index: 1;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000359}}
-.left {
-  display: block;
-  width: 150px;
-  height: 280px;
-  position: absolute;
-  top: 150px;
-  left: 0;
-  z-index: 2;
-  cursor: pointer;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000369}}
-.right {
-  display: block;
-  width: 150px;
-  height: 280px;
-  position: absolute;
-  top: 150px;
-  right: 0;
-  z-index: 2;
-  cursor: pointer;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000380}}
-.wrap_box {
-  width: 600px;
-  height: 400px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000384}}
-.smaller {
-  transform: scale(0.7, 0.7);
-  -ms-transform: scale(0.7, 0.7);
-  /* IE 9 */
-  -moz-transform: scale(0.7, 0.7);
-  /* Firefox */
-  -webkit-transform: scale(0.7, 0.7);
-  /* Safari 和 Chrome */
-  -o-transform: scale(0.7, 0.7);
-  position: relative;
-  top: -60px;
-  left: -90px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000329}}
 .change_password_title {
   width: 100%;
   height: 60px;
@@ -96,26 +26,26 @@ body {
   font-size: 24px;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000336}}
 .change_row {
   width: 400px;
   height: 80px;
   margin: 0 auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000341}}
 .change_row_contL {
   width: 100px;
   height: 40px;
   line-height: 40px;
   font-size: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000347}}
 .change_row_cotnR {
   width: 300px;
   height: 80px;
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000352}}
 .present_input {
   width: 274px;
   height: 20px;
@@ -124,7 +54,16 @@ body {
   padding: 9px 12px;
   border: 1px solid #333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000360}}
+.newPsw_input {
+  width: 274px;
+  height: 20px;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 9px 12px;
+  border: 1px solid #333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000368}}
 .change_error {
   width: 300px;
   height: 40px;
@@ -132,7 +71,7 @@ body {
   font-size: 16px;
   color: #cc3333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000375}}
 .change_password_btn {
   width: 120px;
   height: 40px;
@@ -146,7 +85,7 @@ body {
   font-size: 16px;
   transition: 0.8s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\00003142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\0000388}}
 .change_password_btn:hover {
   background: rgba(140, 95, 2, 0.8);
 }

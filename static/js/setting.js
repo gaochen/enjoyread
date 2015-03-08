@@ -6,53 +6,44 @@ require.config({
 
 require(["jquery"],function($) {
 	$(function() {
-		var arr=[];
-		var num=1;
-		$.each($(".wrap > div"),function(i) {
-			var opacity=$(this).css("opacity");
-			var num = new Number(opacity);
-			arr.push( [$(this).position().left,$(this).position().top,$(this).width(),$(this).height(),num.toFixed(1),$(this).css("z-index")] );//,$(this).width(),$(this).height(),$(this).css("opacity")]);
-		})
-
-		$(".left").click(function() {
-
-			arr.push(arr[0]);
-			arr.shift();
-
-			$(".wrap_box").eq(num).addClass("smaller");
-
-			num--;
-
-			if(num<0) {
-				num=2;
+		$(".newPsw_input").eq(0).blur(function() {
+			if($(this).val().length<6 || $(this).val().lenght>12) {
+				$(".change_error").eq(1).text("密码格式不对");
 			}
-
-			$(".wrap_box").eq(num).removeClass("smaller");
-
-			$.each($(".wrap > div"),function(i) {
-				$(this).css("z-index",arr[i][5]);
-				$(this).animate({"left":arr[i][0],"top":arr[i][1],"opacity":arr[i][4],"width":arr[i][2],"height":arr[i][3]},"normal","swing");
-			})
-		})
-
-		$(".right").click(function() {
-			arr.unshift(arr[arr.length-1]);
-			arr.pop();
-
-			$(".wrap_box").eq(num).addClass("smaller");
-
-			num++;
-
-			if(num>2) {
-				num=0;
+			else {
+				$(".change_error").eq(1).text("");
 			}
-
-			$(".wrap_box").eq(num).removeClass("smaller");
-	
-			$.each($(".wrap > div"),function(i) {
-				$(this).css("z-index",arr[i][5]);
-				$(this).animate({"left":arr[i][0],"top":arr[i][1],"opacity":arr[i][4],"width":arr[i][2],"height":arr[i][3]},"normal","swing");
-			})
 		})
+		$(".newPsw_input").eq(1).blur(function() {
+			if($(this).val()!=$(".newPsw_input").eq(0).val()) {
+				$(".change_error").eq(2).text("两次输入的密码不一致");
+			}
+			else {
+				$(".change_error").eq(2).text("");
+			}
+		})
+
+		$(".change_password_btn").click(function() {
+			if($(".change_error").text()=="") {
+				switch (true) {
+					case $(".present_input").val()=="":
+						$(".change_error").eq(0).text("请填写原密码");
+						break;
+					case $(".newPsw_input").eq(0).val()=="":
+						$(".change_error").eq(1).text("请填写新密码");
+						break;
+					case $(".newPsw_input").eq(1).val()=="":
+						$(".change_error").eq(2).text("请再次填写新密码");
+						break;
+					default:
+						var oldPsw = $(".present_input").val();
+						var newPsw = $(".newPsw_input").eq(0).val();
+						$.post("changepassword",{"oldpassword":oldPsw,"newpassword":newPsw},function(data) {
+							//alert(1);
+						})
+				}
+			}
+		})
+
 	})
 })
