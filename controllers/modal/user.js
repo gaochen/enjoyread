@@ -78,9 +78,9 @@
             var sql = 'select email from user where email = ?';
             mysql.runSql(sql, [email]).then(function(result) {
                 if (result.length !== 0) {
-                    reject();
+                    reject(result);
                 } else {
-                    resolve();
+                    resolve(result);
                 }
             });
         });

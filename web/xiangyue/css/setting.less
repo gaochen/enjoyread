@@ -16,16 +16,78 @@ body {
 
 .wrap {
 	width:900px;
-	height: auto;
+	min-height:600px ;
 	position: relative;
 	margin: 0 auto;
-	background: rgba(255, 255, 255, 0.7)
 }
-.wrap_password {
-	width: 400px;
-	height: auto;
-	margin: 0 auto;
+.div1 {
+	width:420px;
+	height: 280px;
+	background: #FFF;
+	position:absolute; 
+	top:150px;
+	left: 0;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+	opacity: 0.3;
+	z-index: 1;
+	// background: rgba(255, 255, 255, 0.9);
 }
+.div2 {
+	width:600px;
+	height: 400px;
+	position:absolute; 
+	background: #FFF;
+	top: 100px;
+	left: 150px;
+	z-index: 2;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+	// background: rgba(255, 255, 255, 0.9);
+	opacity: 1;
+}
+.div3 {
+	width:420px;
+	height: 280px;
+	background: #FFF;
+	position:absolute; 
+	top: 150px;
+	left: 480px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+	opacity: 0.3;
+	z-index: 1;
+	// background: rgba(255, 255, 255, 0.9);
+}
+.left{
+	display: block;
+	width:150px;
+	height: 280px;
+	position: absolute;
+	top: 150px;
+	left: 0;
+	z-index: 2;
+	cursor: pointer;
+}
+.right{
+	display: block;
+	width:150px;
+	height: 280px;
+	position: absolute;
+	top: 150px;
+	right: 0;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.wrap_box {
+	width:600px;
+	height: 400px;
+}
+.smaller{
+	.html5(scale(0.7,0.7));
+	position: relative;
+	top: -60px;
+	left: -90px;
+}
+
 .change_password_title {
 	width:100%;
 	height: 60px;
@@ -57,14 +119,6 @@ body {
 	padding: 9px 12px;
 	border: 1px solid #333;
 }
-.newPsw_input {
-	width:274px;
-	height: 20px;
-	font-size: 18px;
-	line-height: 20px;
-	padding: 9px 12px;
-	border: 1px solid #333;
-}
 .change_error {
 	width:300px;
 	height: 40px;
@@ -86,63 +140,5 @@ body {
 	transition:0.8s;
 }
 .change_password_btn:hover {
-	background:rgba(140, 95, 2, 0.8);
-}
-.wrap_checkbox {
-	width: 480px;
-	height: auto;
-	margin: 0 auto;
-}
-.change_checkbox_title {
-	width:100%;
-	height: 60px;
-	line-height: 60px;
-	font-size: 24px;
-	text-align: center;
-}
-.change_checkbox {
-	display: block;
-	width:480px;
-	height: 120px;
-	margin:0 auto;
-}
-.change_checkbox li {
-	width: auto;
-	height: auto;
-	margin:0 20px 15px 20px;
-}
-.change_checkbox input {
-	width:16px;
-	height: 16px;
-	position: relative;
-	top: 2px;
-	cursor: pointer;
-}
-.change_checkbox img {
-	width:21px;
-	height: 21px;
-	position: relative;
-	top: 5px;
-	margin-left: 5px;
-}
-.change_checkbox label {
-	font-size: 16px;
-	margin-left:5px;
-	cursor: pointer;
-}
-.change_checkbox_btn {
-	width:120px;
-	height:40px;
-	line-height: 40px;
-	display: block;
-	text-align: center;
-	margin: 0 auto;
-	border-radius: 5px;
-	background: @bgcolor;
-	color:#FFF;
-	font-size: 16px;
-	transition:0.8s;
-}
-.change_checkbox_btn:hover {
 	background:rgba(140, 95, 2, 0.8);
 }

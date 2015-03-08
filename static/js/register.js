@@ -64,7 +64,7 @@ require(["jquery"],function($) {
 									$(".mail_error").text("密码格式错误");
 									break;
 								case 0 : 
-									location.href=location.href;
+									location.href="/setting";
 							}
 						},"json")
 				}
