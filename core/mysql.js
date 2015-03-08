@@ -66,12 +66,12 @@
         });
     }
 
-    module.exports.getCol = function(sql, param, conn) {
+    module.exports.getCol = function(sql, param, key, conn) {
         var that = this;
         return new Promise(function(resolve, reject) {
             that.runSql(sql, param, conn).then(function(result){
                 var tresult = [];
-                for (var i = 0, j = res.length; i < j; i++) {
+                for (var i = 0, j = result.length; i < j; i++) {
                     tresult.push(result[i][key]);
                 }
                 resolve(tresult);

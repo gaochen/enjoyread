@@ -55,4 +55,12 @@
         });
     };
 
+    proto.get.rss = function(req, res) {
+        var uid = req.session.uid;
+        var setting = new Setting(uid);
+        setting.getUserAll().then(function(rss) {
+            res.end(lib.genAjaxRet(0, 'success', rss));
+        });
+    }
+
 }());

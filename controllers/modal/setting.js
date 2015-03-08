@@ -24,6 +24,26 @@
         });
     };
 
+    proto.prototype.getUserAll = function() {
+        var that = this;
+        return new Promise(function(resolve, reject) {
+            var sql = 'select rid from user2rss where uid = ?';
+            mysql.getCol(sql, [that.uid], 'rid').then(function(userRss) {
+                console.log(userRss);
+                mysql.runSql('select * from rss').then(function(rss){
+                    for (var i = 0, j = rss.length; i < j; i++) {
+                        if (rss[i]['id'] in userRss) {
+                            rss[i]['ordered'] = 1;
+                        } else {
+                            rss[i]['ordered'] = 0;
+                        }
+                    }
+                    resolve(rss);
+                }, reject);
+            }, reject)
+        });
+    };
+
     proto.prototype.save = function() {
         var result = _diffRss(this.rss, this.oldrss);
         var esuid = connect.escape(this.uid);
