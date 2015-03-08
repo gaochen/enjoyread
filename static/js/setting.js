@@ -38,12 +38,19 @@ require(["jquery"],function($) {
 					default:
 						var oldPsw = $(".present_input").val();
 						var newPsw = $(".newPsw_input").eq(0).val();
-						$.post("changepassword",{"oldpassword":oldPsw,"newpassword":newPsw},function(data) {
+						$.post("/user/changepassword",{"oldpassword":oldPsw,"newpassword":newPsw},function(data) {
 							//alert(1);
-						})
+						},"json")
 				}
 			}
 		})
+
+		//获取标签值
+		$.get("rss",function(data) {
+			$.each(data,function(i) {
+				var oLi=$('<li><input type="checkbox" id='+data[i].id+' /><label for='+data[i].id+'>'+data[i].name+'</label><img src='+data[i].picture+' /></li>').appendTo($(".change_checkbox"));
+			})
+		},"json")
 
 	})
 })

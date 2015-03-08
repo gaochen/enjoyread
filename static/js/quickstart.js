@@ -14,11 +14,11 @@ require(["jquery"],function($) {
 		})
 
 		//获取标签值
-		// $.get(url,function(data) {
-		// 	$.each(data,function(i) {
-		// 		var oLi=$('<li><input type="checkbox" id="+data[i].id+" /><label for="+data[i].id+">"+data[i].name+"</label><img src="+data[i].picture+" /></li>').appendTo($(".guide_checkbox"));
-		// 	})
-		// },"json")
+		$.get("rss",function(data) {
+			$.each(data,function(i) {
+				var oLi=$('<li><input type="checkbox" id='+data[i].id+' /><label for='+data[i].id+'>'+data[i].name+'</label><img src='+data[i].picture+' /></li>').appendTo($(".guide_checkbox"));
+			})
+		},"json")
 		
 		//邮箱输入框验证
 		$(".guide_input").eq(0).blur(function() {
@@ -62,6 +62,7 @@ require(["jquery"],function($) {
 		$(".guide_next").eq(1).click(function() {
 			//var bool=false;
 			if($(".guide_checkbox").find("input").is(":checked")) {
+				$(".guide_error_two").hide();
 				$(".guide_content_ul").animate({"left":"-1200px"},"fast","swing");
 				$(".guide_pic_number").eq(1).addClass("active");
 				$(".guide_pic_line").eq(1).addClass("active");
@@ -83,7 +84,18 @@ require(["jquery"],function($) {
 		})
 
 		//第三步点击完成提交
-		//var email=$(".guide_input").eq(0).val();
+		$(".guide_done").click(function() {
+			var email=$(".guide_input").eq(0).val();
+			var rss_arr=[];
+			$.each($(".guide_checkbox").find("input"),function() {
+				if($(this).is(":checked")) {
+					rss_arr.push($(this).attr("id"));
+				}
+			})
+			$.post("quickstart",{"email":email,"rss":rss_arr},function() {
+				
+			})
+		})
 
 	})
 })
