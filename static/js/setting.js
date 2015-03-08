@@ -46,11 +46,35 @@ require(["jquery"],function($) {
 		})
 
 		//获取标签值
-		$.get("rss",function(data) {
-			$.each(data,function(i) {
-				var oLi=$('<li><input type="checkbox" id='+data[i].id+' /><label for='+data[i].id+'>'+data[i].name+'</label><img src='+data[i].picture+' /></li>').appendTo($(".change_checkbox"));
+		$.get("/user/rss",function(res) {
+			$.each(res.data,function(i) {
+				if(res.data[i].ordered==1) {
+					var oLi=$('<li><input type="checkbox" id='+res.data[i].id+' checked="checked" /><label for='+res.data[i].id+'>'+res.data[i].name+'</label><img src='+res.data[i].picture+' /></li>').appendTo($(".change_checkbox"));
+				}
+				else {
+					var oLi=$('<li><input type="checkbox" id='+res.data[i].id+' /><label for='+res.data[i].id+'>'+res.data[i].name+'</label><img src='+res.data[i].picture+' /></li>').appendTo($(".change_checkbox"));
+				}
+				
 			})
 		},"json")
+
+		//保存设置
+		$(".change_checkbox_btn").click(function() {
+			if($(".change_checkbox").find("input").is(":checked")) {
+				var rss_arr=[];
+				$.each($(".change_checkbox").find("input"),function() {
+					if($(this).is(":checked")) {
+						rss_arr.push($(this).attr("id"));
+					}
+				})
+				$.post("/user/savesetting",{"rss":rss_arr},function() {
+				
+				})
+			}
+			else {
+				$(".change_checkbox_error").show();
+			}
+		})
 
 	})
 })

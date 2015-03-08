@@ -139,6 +139,16 @@ body {
   cursor: pointer;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\00003133}}
+.change_checkbox_error {
+  width: 408px;
+  height: 20px;
+  font-size: 16px;
+  color: #cc3333;
+  margin: 0 auto;
+  margin-bottom: 19px;
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\00003142}}
 .change_checkbox_btn {
   width: 120px;
   height: 40px;
@@ -152,7 +162,7 @@ body {
   font-size: 16px;
   transition: 0.8s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Lenovo\/Desktop\/enjoyread\/enjoyread\/static\/css\/setting\.less}line{font-family:\00003155}}
 .change_checkbox_btn:hover {
   background: rgba(140, 95, 2, 0.8);
 }
