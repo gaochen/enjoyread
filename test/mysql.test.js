@@ -9,22 +9,12 @@ describe('mysql.js',function(){
             done();
         });
     });
-    it('runSql with correct sql is ok',function(done){
+
+    it('runSql is ok',function(done){
         myq.runSql('select * from user').then(function(result){
             result.should.be.Array;
             done();
-        },function(reason){
-            reason.should.not.be.empty;
-            done();
-        });
+        },done).catch(done);
     });
-    it('runSql with error sql is ok',function(done){
-        myq.runSql('select * from user').then(function(result){
-            result.should.be.Array;
-            done();
-        },function(reason){
-            reason.should.not.be.empty;
-            done();
-        });
-    });
+
 });

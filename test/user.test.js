@@ -1,16 +1,22 @@
 var user = require('../controllers/modal/user.js');
 var should = require('should');
+var user1 = new user(29,'acs1899@163.com','123123');
 
 describe('user.js',function(){
-    it('emailAlreadyExists : acs1899@163.com is exist',function(done){
+    it('function emailAlreadyExists : acs1899@163.com is exist',function(done){
         function resolve(result){
             result.should.have.length(1);
             done();
         }
-        function reject(reason){
-            reason.should.have.length(0);
+        user.emailAlreadyExists('acs1899@163.com')
+            .then(resolve,done)
+            .catch(done);
+    });
+
+    it('function save : {email:acs1899@163.com,pass:123123}',function(done){
+        function resolve(result){
             done();
         }
-        user.emailAlreadyExists('acs1899@163.com').then(resolve,reject);
+        user1.save().then(resolve,done).catch(done);
     });
 });
