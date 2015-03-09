@@ -15,10 +15,10 @@
         connect = mysql.connect(__dirname + '/../mysql.json', 'enjoyread');
         if (!req.session.uid) {
             //for debug
-            req.session.uid = 58;
+            //req.session.uid = 58;
             //debug dong
-            //var message = lib.genAjaxRet(10001, lib.s('ACCESS_DENY'));
-            //res.end(message);
+            var message = lib.genAjaxRet(10001, lib.s('ACCESS_DENY'));
+            res.end(message);
         }
         next();
     }

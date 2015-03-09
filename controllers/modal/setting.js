@@ -5,7 +5,7 @@
     var mysql = require(__dirname + '/../../core/mysql');
     var connect = mysql.connect(__dirname + '/../../mysql.json', 'enjoyread');
 
-    var proto = module.exports = function(uid) {
+    var proto = module.exports = function (uid) {
         this.uid = uid;
         this.rss;
         this.pushtime;
