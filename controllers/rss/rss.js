@@ -26,13 +26,12 @@
                 that.picture = result['picture'];
                 that.type = result['type'];
                 resolve.call(that, that);
-            }, function(err) {
-                reject.call(that, that);
-            });
+            }, reject);
         });
     };
 
     Rss.prototype.getTodays = function() {
+        var req = request(that.url, {timeout: 10000, pool: false});
         req.on('response', function (res) {
             var stream = this;
             if (res.statusCode != 200) return this.emit('error', new Error('Bad status code'));

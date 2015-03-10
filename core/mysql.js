@@ -23,7 +23,6 @@
     module.exports.runSql = function(sql, param, conn) {
         var conn = conn || _lastConnection || connect(_mysqlConfigFile, _which);
         var sql = sqlFilter(sql, param, conn);
-        console.log(sql);
         return new Promise(function(resolve, reject){
             conn.query(sql, function(err, result) {
                 if (err) {
@@ -33,7 +32,6 @@
                 }
             });
         });
-        
     }
 
     module.exports.getLine = function(sql, param, conn) {
@@ -45,9 +43,7 @@
                 } else {
                     resolve(null);
                 }
-            }, function(err) {
-                reject(err);
-            });
+            }, reject);
         });
     }
 
@@ -60,9 +56,7 @@
                 } else {
                     resolve(null);
                 }
-            }, function(err) {
-                reject(err);
-            });
+            }, reject);
         });
     }
 
@@ -75,15 +69,13 @@
                     tresult.push(result[i][key]);
                 }
                 resolve(tresult);
-            }, function(err) {
-                reject(err);
-            });
+            }, reject);
         });
     }
 
     function sqlFilter(sql, params, connection) {
         var piece;
-        var result = ''; 
+        var result = '';
         var pieces = sql.split(/(\?)/);
         var i = 0;
 
@@ -93,7 +85,7 @@
                 i++;
             } else {
                 result += piece;
-            }   
+            }
         }
         return result;
     }
