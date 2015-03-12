@@ -12,13 +12,13 @@
     proto.get = {};
 
     proto.before = function(req, res, next) {
-        connect = mysql.connect(__dirname + '/../mysql.json', 'enjoyread');
+        var connect = mysql.connect(__dirname + '/../mysql.json', 'enjoyread');
         if (!req.session.uid) {
             //for debug
             //req.session.uid = 58;
             //debug dong
             var message = lib.genAjaxRet(10001, lib.s('ACCESS_DENY'));
-            res.end(message);
+            res.send(message);
         }
         next();
     }
@@ -29,14 +29,14 @@
         var uid = req.session.uid;
 
         var user = new User(uid);
-        User.validUser(user.email, oldPassword).then(function() {
+        User.validUser(user.email, oldPassword).then(function(result) {
             user.changePassword(newPassword).then(function() {
-                res.end(lib.genAjaxRet(0));
+                res.send(lib.genAjaxRet(0));
             }, function() {
-                res.end(lib.genAjaxRet(20001, lib.s('CHANGE_PASSWORD_FAILED')));
+                res.send(lib.genAjaxRet(20001, lib.s('CHANGE_PASSWORD_FAILED')));
             });
         }, function() {
-            res.end(lib.genAjaxRet(20000, lib.s('INVALID_PASSWORD')));
+            res.send(lib.genAjaxRet(20000, lib.s('INVALID_PASSWORD')));
         });
     }
 
@@ -60,6 +60,8 @@
         var setting = new Setting(uid);
         setting.getUserAll().then(function(rss) {
             res.end(lib.genAjaxRet(0, 'success', rss));
+        },function(err){
+            console.log(err);
         });
     }
 

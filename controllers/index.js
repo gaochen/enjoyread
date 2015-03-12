@@ -35,7 +35,7 @@
 
         logout: function(req, res) {
             req.session.destroy();
-            res.end('success');
+            res.send('success');
         },
 
         quickstart: function(req, res) {
@@ -48,7 +48,7 @@
 
         rss: function(req, res) {
             mysql.runSql('select id, name, picture from rss where type = "OFFICAL"').then(function(result) {
-                res.end(JSON.stringify(result));
+                res.send(JSON.stringify(result));
             }, function(err) {
                 console.log(err);
             });
@@ -65,16 +65,22 @@
                 setting.rss = rss;
                 setting.pushtime = pushtime;
                 setting.save();
-                res.end('success')  ;
+                res.send('success')  ;
             });
-            
         },
 
         emailexists: function(req, res) {
             var email = req.body.email;
             User.emailAlreadyExists(email).then(
-                function() {res.end(lib.genAjaxRet(0))}, 
-                function() {res.end(lib.genAjaxRet(10001, lib.s('EMAIL_EXISTS')))});
+                function(result) {
+                    if(!result){
+                        res.send(lib.genAjaxRet(0));
+                    }else{
+                        res.send(lib.genAjaxRet(10001, lib.s('EMAIL_EXISTS')));
+                    }
+                },function(err){
+                    handleErr(res,err);
+                });
         },
 
         quickstart: function(req, res) {
@@ -85,7 +91,7 @@
                 setting.init().then(function() {
                     setting.rss = rss;
                     setting.save();
-                    res.end('success');
+                    res.send('success');
                 }, function(err) {
                     console.log(err);
                 });
@@ -102,12 +108,16 @@
                 return;
             }
             password = User.encodePassword(password);
-            User.validUser(email, password).then(function(id){
-                req.session.uid = id;
-                res.send(lib.genAjaxRet(0));
-            }, function() {
-                var msg = lib.s('LOGIN_FAILED');
-                res.send(lib.genAjaxRet(10003, msg));
+            User.validUser(email, password).then(function(result){
+                if(typeof result === 'number'){
+                    req.session.uid = id;
+                    res.send(lib.genAjaxRet(0));
+                }else if(result === 'email or password is wrong'){
+                    var msg = lib.s('LOGIN_FAILED');
+                    res.send(lib.genAjaxRet(10003, msg));
+                }
+            }, function(err) {
+                handleErr(res,err);
             });
         },
 
@@ -116,7 +126,6 @@
             var password = req.body.password;
             if ( !(email && password) ) {
                 res.send(lib.genAjaxRet(10001, lib.s('INVALID_EMAIL')));
-                res.end();
                 return;
             }
 
@@ -129,21 +138,29 @@
             if (!User.validEmail(email)) {
                 var msg = lib.s('INVALID_EMAIL');
                 var ret = lib.genAjaxRet(10002, msg);
-                res.end(ret);
+                res.send(ret);
                 return;
             }
 
-            User.emailAlreadyExists(email).then(function() {
-                User.addUser(email, password)
-                    .then(function(id) {
-                        res.send((lib.genAjaxRet(0, 'success', id)));
-                    });
+            User.emailAlreadyExists(email).then(function(result) {
+                if(!result){
+                    User.addUser(email, password)
+                        .then(function(id) {
+                            res.send((lib.genAjaxRet(0, 'success', id)));
+                        });
+                }else{
+                    var msg = lib.s('EMAIL_EXISTS');
+                    var ret = lib.genAjaxRet(10001, msg);
+                    res.send(ret);
+                }
             }, function(err) {
-                var msg = lib.s('EMAIL_EXISTS');
-                var ret = lib.genAjaxRet(10001, msg);
-                res.end(ret);
+                handleErr(res,err);
             });
         }
     };
+
+    function handleErr(response,err){
+        response.send(lib.genAjaxRet(-400,err));
+    }
 }());
 
